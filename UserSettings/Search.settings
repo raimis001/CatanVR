@@ -1,1 +1,96 @@
-{}
+trackSelection = true
+fetchPreview = true
+defaultFlags = 264
+keepOpen = false
+queryFolder = "Assets"
+onBoardingDoNotAskAgain = true
+showPackageIndexes = false
+showStatusBar = true
+scopes = {
+	"last_search.110DEAF1" = "store: trees"
+	"OpenInspectorPreview.110DEAF1" = "0"
+	"currentGroup.110DEAF1" = "store"
+	"last_search.110DEAE9" = "store: tree"
+	"OpenInspectorPreview.110DEAE9" = "0"
+	"currentGroup.110DEAE9" = "store"
+	"last_search.D379D910" = "store: mug"
+	"OpenInspectorPreview.D379D910" = "0"
+	"currentGroup.D379D910" = "store"
+}
+providers = {
+	log = {
+		active = false
+		priority = 210
+		defaultAction = null
+	}
+	adb = {
+		active = false
+		priority = 2500
+		defaultAction = null
+	}
+	performance = {
+		active = false
+		priority = 100
+		defaultAction = null
+	}
+	packages = {
+		active = true
+		priority = 90
+		defaultAction = null
+	}
+	store = {
+		active = true
+		priority = 100
+		defaultAction = null
+	}
+	find = {
+		active = true
+		priority = 25
+		defaultAction = null
+	}
+	asset = {
+		active = true
+		priority = 25
+		defaultAction = null
+	}
+	scene = {
+		active = true
+		priority = 50
+		defaultAction = null
+	}
+	menu = {
+		active = true
+		priority = 80
+		defaultAction = null
+	}
+	settings = {
+		active = true
+		priority = 100
+		defaultAction = null
+	}
+	calculator = {
+		active = true
+		priority = 10
+		defaultAction = null
+	}
+	static_methods = {
+		active = true
+		priority = 85
+		defaultAction = null
+	}
+}
+objectSelectors = {
+}
+recentSearches = [
+	"store: mug"
+	"store:"
+]
+searchItemFavorites = [
+]
+savedSearchesSortOrder = 3
+showSavedSearchPanel = true
+expandedQueries = [-1765347274 961552606]
+queryBuilder = true
+ignoredProperties = "id;name;classname;imagecontentshash"
+helperWidgetCurrentArea = "store:"
+disabledIndexers = ""

@@ -28,19 +28,31 @@ public class Game : MonoBehaviour
     public TMP_Text pieceName;
     public TMP_Text pieceBuildings;
 
+    public TMP_Text[] diceTexts;
+
 
     public LayerMask pieceLayer;
 
     public GameObject villagePrefab;
 
+    public Dice[] dices;
+    public Animator diceAnim;
+
     Transform xrCamera;
 
     Piece curentPiece;
+
+    int diceCount;
+    int diceValue;
+    bool diceSpinned;
 
     private void Awake()
     {
         instance = this;
         xrCamera = Camera.main.transform;
+
+        foreach (TMP_Text txt in diceTexts)
+            txt.text = "";
     }
 
     private void Update()
@@ -113,5 +125,38 @@ public class Game : MonoBehaviour
 
         GameObject h = Instantiate(instance.villagePrefab, point.position, point.rotation);
 
+    }
+
+    public static void StartDices(XRHand hand)
+    {
+        if (instance.diceSpinned)
+            return;
+
+        if (!hand.TrigerPress)
+            return;
+
+        instance.diceCount = 0;
+        instance.diceValue = 0;
+        instance.diceSpinned = true;
+        foreach (TMP_Text txt in instance.diceTexts)
+            txt.text = "";
+        foreach (Dice dice in instance.dices)
+        {
+            dice.Spin();
+        }
+        instance.diceAnim.SetBool("Open", true);
+    }
+
+    public void OnDiceEnd(int id, int number)
+    {
+        diceTexts[id].text = number.ToString();
+        diceValue += number;
+        diceCount++;
+        if (diceCount > 1)
+        {
+            diceTexts[2].text = diceValue.ToString();
+            diceSpinned = false;
+            //diceAnim.SetBool("Open", false);
+        }
     }
 }
